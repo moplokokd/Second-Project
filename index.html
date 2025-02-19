@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ร้านรองเท้า Brand Name</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .header {
+            background-color: #4a4a4a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .product {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            overflow: hidden;
+            transition: transform 0.2s;
+            width: calc(33.333% - 40px);
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .product-description {
+            padding: 20px;
+        }
+
+        .product-description h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .product-description p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .product-price {
+            font-weight: bold;
+            color: #e60000;
+        }
+
+        @media (max-width: 768px) {
+            .product {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product {
+                width: 100%;
+            }
+        }
+
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .home-button:hover {
+            background-color: #555;
+        }
+
+        .search-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .search-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="จำลองงานโปรเจค.html" class="home-button">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="product.html" class="search-button">
+            <i class="fas fa-search"></i>
+        </a>
+        <h1>ร้านรองเท้า Brand Name</h1>
+        <p>รองเท้าคุณภาพดีในราคาที่คุณไม่สามารถต้านทานได้!</p>
+    </header>
+
+    <main class="container">
+        <div class="product">
+            <img src="117.webp" alt="รองเท้ารุ่น Converse">
+            <div class="product-description">
+                <h3>รองเท้ารุ่น Converse</h3>
+                <p>รองเท้ารุ่น Converse  ซึ่งเป็นหนึ่งในรองเท้าผ้าใบที่คลาสสิกและโด่งดังที่สุดของแบรนด์ Converse และเหมาะกับการแต่งในลุคต่างๆของสายแฟชั่น</p>
+                <p class="product-price">฿1,500</p>
+            </div>
+        </div>
+        
+        <div class="product">
+            <img src="119.jpg" alt="รองเท้ารุ่น B">
+            <div class="product-description">
+                <h3>รองเท้ารุ่น Lacoste</h3>
+                <p>รองเท้ารุ่น Lacoste เรียบง่าย ใส่สบาย เอาไว้ใส่เล่นหรือใส่ในเนื่องโอกาสต่างๆได้ ใส่แฟชั่นก็ได้นะ อิอิ</p>
+                <p class="product-price">฿1,800</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="200.jpg" alt="รองเท้ารุ่น C">
+            <div class="product-description">
+                <h3>รองเท้ารุ่น Nike</h3>
+                <p>รองเท้ารุ่น Nike สีขาวม๊ากก ใส่เท่ๆบอกเลยเฟี้ยวสุดในซอย ใส่คู่กับแฟชั่นได้เพียบ</p>
+                <p class="product-price">฿2,000</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="201.jpg" alt="รองเท้ารุ่น D">
+            <div class="product-description">
+                <h3>รองเท้ารุ่น Lacoste</h3>
+                <p>รองเท้ารุ่น Lacoste สุดคลาสสิค สวมใส่สบาย เหมาะสำหรับการเดินเล่นในวันหยุดและกิจกรรมทั่วไป</p>
+                <p class="product-price">฿1,200</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="202.jpg" alt="รองเท้ารุ่น E">
+            <div class="product-description">
+                <h3>รองเท้ารุ่น Nike</h3>
+                <p>รองเท้าNike สีดำ-ขาว  ดีไซน์ที่เรียบง่ายแต่คลาสสิก นิยมในหมู่มาก เหมาะสำหรับสายแฟชั่นสุดๆ </p>
+                <p class="product-price">฿2,500</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="205.jpg" alt="รองเท้ารุ่น F">
+            <div class="product-description">
+                <h3>รองเท้ารุ่น  Converse</h3>
+                <p>รองเท้ารุ่น  Converse พื้นสีดำตัดกับลายดาวสีขาวครีม ซึ่งเป็นรุ่นพิเศษของ Converse Chuck 70 ที่โดดเด่นด้วยลวดลายดาวทั่วตัวรองเท้า</p>
+                <p class="product-price">฿1,900</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Product Search</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #e0f4ff, #fff0f5);
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+        }
+
+        .header {
+            color: #5d8aa8;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            padding: 10px 15px;
+            border: 2px solid #b0c4de;
+            border-radius: 8px;
+            width: 60%;
+            max-width: 300px;
+            margin-right: 10px;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: #87ceeb;
+            box-shadow: 0 0 5px rgba(135, 206, 235, 0.5);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #b0c4de;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #87ceeb;
+        }
+
+        .home-button {
+            margin-top: 20px;
+            background-color: #ffb6c1;
+        }
+
+        .home-button:hover {
+            background-color: #ff69b4;
+        }
+
+        #products {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center>
+            <div class="header form-input">Result Product</div>
+            <input type="text" name="search" id="search" placeholder="Search" />
+            <button>Search</button>
+            <br />
+            <p>
+                <button onclick="window.location='./index1.html';">Insert Data</button>
+                <button class="home-button" onclick="window.location='./index.html';">Home</button>
+            </p>
+            <div id="products"></div>
+        </center>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>

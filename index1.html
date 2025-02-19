@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            color: #4a90e2;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .form-input {
+            margin-bottom: 20px;
+        }
+
+        .flex {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .header-form {
+            color: #5c6bc0;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .form {
+            padding: 12px;
+            border: 2px solid #e3f2fd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            background: #ffffff;
+        }
+
+        .form:focus {
+            outline: none;
+            border-color: #90caf9;
+            box-shadow: 0 0 0 3px rgba(144, 202, 249, 0.2);
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .button {
+            background: #64b5f6;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .button:hover {
+            background: #42a5f5;
+        }
+
+        .message {
+            text-align: center;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .message.success {
+            background-color: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .message.error {
+            background-color: #ffcdd2;
+            color: #c62828;
+        }
+
+        a {
+            display: inline-block;
+            color: #5c6bc0;
+            text-decoration: none;
+            padding: 8px 20px;
+            border: 2px solid #5c6bc0;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background: #5c6bc0;
+            color: white;
+        }
+
+        /* Animation for form inputs */
+        .form-input {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-input:nth-child(1) { animation-delay: 0.1s; }
+        .form-input:nth-child(2) { animation-delay: 0.2s; }
+        .form-input:nth-child(3) { animation-delay: 0.3s; }
+        .form-input:nth-child(4) { animation-delay: 0.4s; }
+        .form-input:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header form-input">Registration Form</div>
+        <div class="flex form-input">
+            <div class="header-form">Brandname</div>
+            <input class="form" name="Brandname" type="text" />
+        </div>
+        <div class="flex form-input">
+            <div class="header-form">Explanation</div>
+            <input class="form" name="Explanation" type="text" />
+        </div>
+        <div class="flex form-input">
+            <div class="header-form">Price</div>
+            <input class="form" name="Price" type="text" />
+        </div>
+        <div class="flex form-input">
+            <div class="header-form">Size</div>
+            <input class="form" name="Size" type="text" />
+        </div>
+
+        <div class="form-input center">
+            <a href="./product.html">Home</a>
+        </div>
+        <div id="response-message" class="message"></div>
+        <div class="center">
+            <button onclick="submitData()" class="button">ส่งข้อมูล</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index1.js"></script>
+</body>
+</html>

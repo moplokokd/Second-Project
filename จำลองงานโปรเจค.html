@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('งาน112.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            position: relative;
+            width: 400px;
+            margin: 20px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            margin-bottom: 20px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            color: #fff;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .input-group input:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #000000, #333333);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #1a1a1a, #4d4d4d);
+        }
+
+        .home-btn {
+            background: linear-gradient(45deg, #2c2c2c, #4a4a4a);
+        }
+
+        .home-btn:hover {
+            background: linear-gradient(45deg, #3c3c3c, #5a5a5a);
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .links a:hover {
+            color: #e0e0e0;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        #login-form, #register-form {
+            display: none;
+        }
+
+        #login-form.active, #register-form.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div id="login-form" class="form-container active">
+            <h2>เข้าสู่ระบบ</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>ชื่อผู้ใช้</label>
+                    <input type="text" id="username" placeholder="กรุณากรอกชื่อผู้ใช้">
+                </div>
+                <div class="input-group">
+                    <label>รหัสผ่าน</label>
+                    <input type="password" id="password" placeholder="กรุณากรอกรหัสผ่าน">
+                </div>
+                <div class="error-message" id="loginError"></div>
+                <button type="submit" class="btn">เข้าสู่ระบบ</button>
+                <div class="links">
+                    <a href="#" onclick="showRegister()">สมัครสมาชิก</a>
+                    <a href="#">ลืมรหัสผ่าน?</a>
+                </div>
+            </form>
+        </div>
+
+        <div id="register-form" class="form-container">
+            <h2>สมัครสมาชิก</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <label>ชื่อผู้ใช้</label>
+                    <input type="text" id="registerUsername" placeholder="กรุณากรอกชื่อผู้ใช้">
+                </div>
+                <div class="input-group">
+                    <label>อีเมล</label>
+                    <input type="email" id="registerEmail" placeholder="กรุณากรอกอีเมล">
+                </div>
+                <div class="input-group">
+                    <label>รหัสผ่าน</label>
+                    <input type="password" id="registerPassword" placeholder="กรุณากรอกรหัสผ่าน">
+                </div>
+                <div class="input-group">
+                    <label>ยืนยันรหัสผ่าน</label>
+                    <input type="password" id="confirmPassword" placeholder="กรุณายืนยันรหัสผ่าน">
+                </div>
+                <div class="error-message" id="registerError"></div>
+                <button type="submit" class="btn">สมัครสมาชิก</button>
+                <button type="button" class="btn home-btn" onclick="showLogin()">กลับสู่หน้าล็อคอิน</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showLogin() {
+            document.getElementById('register-form').classList.remove('active');
+            document.getElementById('login-form').classList.add('active');
+            document.getElementById('registerError').textContent = ''; // Clear register errors
+        }
+
+        function showRegister() {
+            document.getElementById('login-form').classList.remove('active');
+            document.getElementById('register-form').classList.add('active');
+            document.getElementById('loginError').textContent = ''; // Clear login errors
+        }
+
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const loginError = document.getElementById('loginError');
+
+            if (username === 'user' && password === 'tk290409') { // Simplified for demonstration
+                window.location.href = 'index.html';
+                loginError.textContent = ''; // Clear any previous error
+            }
+             else if (username === 'kwanwassana789@gmail.com' && password === 'tk290409') {
+                window.location.href = 'index.html';
+                 loginError.textContent = '';
+            }
+            else {
+                loginError.textContent = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง';
+            }
+        });
+
+       document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const registerUsername = document.getElementById('registerUsername').value;
+            const registerEmail = document.getElementById('registerEmail').value;
+            const registerPassword = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const registerError = document.getElementById('registerError');
+
+            if (!registerUsername || !registerEmail || !registerPassword || !confirmPassword) {
+                registerError.textContent = 'กรุณากรอกข้อมูลให้ครบถ้วน';
+                return;
+            }
+
+            if (registerPassword !== confirmPassword) {
+                registerError.textContent = 'รหัสผ่านไม่ตรงกัน';
+                return;
+            }
+
+            if (!registerEmail.includes('@')) {
+                registerError.textContent = 'รูปแบบอีเมลไม่ถูกต้อง';
+                return;
+            }
+
+            // Simulate successful registration
+            registerError.textContent = 'สมัครสมาชิกสำเร็จ!  โปรดเข้าสู่ระบบ';
+            // Optionally, automatically switch to the login form after successful registration.
+            showLogin();
+        });
+    </script>
+</body>
+</html>
